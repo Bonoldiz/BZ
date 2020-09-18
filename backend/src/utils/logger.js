@@ -1,5 +1,6 @@
 const path = require('path');
 const pino = require('pino');
+require("dotenv").config();
 
 /**
  * Pino logger and file logger app instance
@@ -20,7 +21,7 @@ const fileLogger = pino({
       colorize: false
    },
    prettifier: require('pino-pretty')
-}, pino.destination(path.join(path.resolve(__dirname), "../../", process.env.LOG_FILE)))
+}, pino.destination(path.join(__dirname, "../../", process.env.LOG_FILE)));
 
 /**
  * Override default console loggin methods

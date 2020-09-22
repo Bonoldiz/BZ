@@ -1,10 +1,45 @@
 const { getRouter } = require("../router");
-const { Location,Region,Province,Zone } = require("./Location.Model");
-const { resourceValidator ,locationQueryValidator} = require("./Location.validator");
+const { Municipalita, Indirizzo, Regione, Provincia } = require("./Location.Model");
+const { resourceValidator ,locationQueryValidator,indirizzoValidator} = require("./Location.validator");
 const { errorHandler } = require("../../middlewares/error");
 const LocationRouter = getRouter()
 
-LocationRouter.get('/', async (req, res, next) => {
+
+LocationRouter.route("/indirizzo")
+   .get(async (req,res,next)=>{
+      const indirizzi = await Indirizzo.find({}).exec();
+
+      res.json({data:indirizzi});
+   })
+   .put(async (req,res,next) => {
+      var indirizzo;
+      try{
+         indirizzo = await indirizzoValidator.validate(req.body);
+
+         const assertsRegioneProvincia = await Promise.all([
+            Regione.find({codice:indirizzo.regione}).exec().then(docs => docs.length ? null : new Error("Regione non valida")),
+            Provincia.find({codice:indirizzo.provincia}).exec().then(docs => docs.length ? null : new Error("Provincia non valida")),
+            Municipalita.find({codice:indirizzo.comune}).exec().then(docs => docs.length ? null : new Error("Comune non trovato")),
+         ])
+
+         for(const assertValoriIndirizzo of assertsRegioneProvincia){
+            if(assertValoriIndirizzo instanceof Error) 
+               return next(assertValoriIndirizzo)
+         }
+
+         // TODO create Indirizzo e return
+         
+      }catch(e){
+         res.status(422);
+         return next(e);
+      }
+
+      
+      
+   })
+
+
+/* LocationRouter.get('/', async (req, res, next) => {
    var queryParams = {};
    try{
       queryParams = await locationQueryValidator.validate(req.query);
@@ -77,7 +112,7 @@ LocationRouter.get("/:resource/:codice",async (req, res, next) => {
    }
 
    res.json({data:resource});
-})
+}) */
 
 LocationRouter.use(errorHandler)
 

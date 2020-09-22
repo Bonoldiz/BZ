@@ -32,4 +32,6 @@ console.error = (...args) => { logger.error(...args); fileLogger.error(...args) 
 console.warn = (...args) => { logger.warn(...args); fileLogger.warn(...args) };
 console.log = console.info;
 
+console.file = (...args) => { fileLogger.info(...args) };
+
 module.exports = { logger, fileLogger };

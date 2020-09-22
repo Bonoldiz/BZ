@@ -18,6 +18,8 @@
       function selectRegion(codice){
          provinceSL.innerHTML = '';
          locationSL.innerHTML = '';
+
+         
       }
 
       regionSL.onchange = (e) => console.log(e.target.value)

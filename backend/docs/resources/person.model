@@ -1,4 +1,0 @@
-{
-    "fname" : {"type": "String" , "required": true},
-    "sname" : {"type": "String" , "required": true}
-}

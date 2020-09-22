@@ -28,7 +28,7 @@ app.get('/', (req, res, next) => {
    res.json({ data: { message: "hello" } })
 });
 
-app.use('/location', LocationRouter, errorHandler);
+app.use('/location', LocationRouter);
 
 app.use(errorHandler);
 

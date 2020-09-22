@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Test bazar backend</title>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+
+<body>
+
+   <section>
+      <div class="box ">
+         <div class="columns">
+            <div class="field column is-4">
+               <label for="region" class="label">Region</label>
+               <div class="control">
+                  <input list="regions" class="input" name="region" id="region">
+                  <datalist id="regions">
+                    <option value="01" >
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                  </datalist>
+               </div>
+            </div>
+            <div class="field column is-4">
+               <label for="province" class="label">Province</label>
+               <div class="control">
+                  <input type="text" class="input" id="province">
+               </div>
+            </div>
+            <div class="field column is-4  ">
+               <label for="location" class="label">Location</label>
+               <div class="control">
+                  <input type="text" class="input" id="location">
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </section>
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+   <script src="./test.js"></script>
+</body>
+
+</html>

@@ -24,6 +24,7 @@
    },
    "devDependencies": {
       "eslint": "^7.9.0",
+      "parcel": "^1.12.4",
       "pino-pretty": "^4.2.1"
    }
 }

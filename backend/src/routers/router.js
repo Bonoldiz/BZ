@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
  * Create and configure an express router instance
  */
 const getRouter = () => {
-   const router = express.Router();
+   const router = express.Router({mergeParams:true});
    router.use(cors());
    router.use(helment());
    router.use(bodyParser.json());

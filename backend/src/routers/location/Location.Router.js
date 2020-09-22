@@ -46,7 +46,7 @@ LocationRouter.get('/:resource', async (req, res, next) => {
       return next(new Error("Not Found"));
    }
 
-   res.json(resources);
+   res.json({data:resources});
 
 })
 
@@ -76,7 +76,7 @@ LocationRouter.get("/:resource/:codice",async (req, res, next) => {
       return next(new Error("Not Found"));
    }
 
-   res.json(resources);
+   res.json({data:resource});
 })
 
 LocationRouter.use(errorHandler)

@@ -5,7 +5,7 @@
    "main": "src/index.js",
    "scripts": {
       "lint": "eslint --fix --cache ./src/index.js",
-      "dev": "nodemon src/index.js --exec 'npm run lint && node'"
+      "dev": "nodemon --ignore 'test/*.js' src/index.js --exec 'npm run lint && node'"
    },
    "keywords": [],
    "author": "",
@@ -26,5 +26,8 @@
       "eslint": "^7.9.0",
       "parcel": "^1.12.4",
       "pino-pretty": "^4.2.1"
+   },
+   "nodemonConfig":{
+      "ignore":["test/*.js"]
    }
 }

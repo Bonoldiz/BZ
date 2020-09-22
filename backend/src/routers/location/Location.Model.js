@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const GenericSK = mongoose.Schema({
    nome: { type: String },
-   codice: { type: String, index: true }
+   codice: { type: String, unique: true }
 })
 
 const Zone = mongoose.model("Zone", GenericSK, "zone");
@@ -14,7 +14,7 @@ const Region = mongoose.model("Region", GenericSK, "region");
 
 const LocationSK = mongoose.Schema({
    nome: { type: String },
-   codice: { type: String, index: true },
+   codice: { type: String, unique: true },
    codice_zona: { type: String },
    codice_regione: { type: String},
    codice_provincia: { type: String},

@@ -1,23 +1,15 @@
 const yup = require("yup");
 
-const resourceValidator = yup.string().oneOf(["zone", "province", "region"]);
-
-const locationQueryValidator = yup.object().shape({
-   nome: yup.string(),
-   codice: yup.string(),
-   codice_zona: yup.string(),
-   codice_regione: yup.string(),
-   codice_provincia: yup.string(),
-})
+const resourceValidator = yup.string().oneOf(["provincia", "regione", "municipalita"]);
 
 const indirizzoValidator = yup.object().shape({
    via: yup.string().required(),
    civico: yup.string(),
-   cap: yup.string(),
+   cap: yup.string().required(),
    regione : yup.string().required(), 
    provincia: yup.string().required(),
-   comune : yup.string().required(),
+   municipalita : yup.string().required(),
    attributi: yup.array(yup.string())
 })
 
-module.exports = { resourceValidator, locationQueryValidator,indirizzoValidator };
+module.exports = { resourceValidator,indirizzoValidator };

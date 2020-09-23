@@ -12,4 +12,4 @@ mongoose.connect("mongodb://localhost:27017/bazar", {
 const { initLocation } = require("../routers/location/Location.Model");
 
 // Startup Models init
-//initLocation();
+// initLocation();

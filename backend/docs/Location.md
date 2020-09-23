@@ -6,6 +6,7 @@
     - [Provincia](#provincia)
     - [Municipalita](#municipalita)
     - [Indirizzo](#indirizzo)
+  - [Indexes](#indexes)
   - [Routes](#routes)
 
 > vedi : [comuni-json](https://github.com/matteocontrini/comuni-json)
@@ -43,7 +44,7 @@ rappresenta una regione
 
 ```js
 mongoose.Schema({
-   nome: { type: String },
+   nome: String,
    codice: { type: String, unique: true },
 });
 ```
@@ -54,9 +55,9 @@ rappresenta una provincia
 
 ```js
 mongoose.Schema({
-   nome: { type: String },
+   nome: String,
    codice: { type: String, unique: true },
-   regione: { type: String} // codice regione
+   regione: String // codice regione
 });
 ```
 
@@ -66,13 +67,13 @@ rappresenta un comune/paese
 
 ```js
 mongoose.Schema({
-   nome: { type: String },
+   nome: String,
    codice: { type: String, unique: true },
-   zona: { type: String },
-   regione : { type: String}, // codice regione
-   provincia: { type: String}, // codice provincia
-   sigla: { type: String },
-   codiceCatastale: { type: String },
+   zona: String,
+   regione : String, // codice regione
+   provincia: String, // codice provincia
+   sigla: String,
+   codiceCatastale: String,
    cap: { type: [String] },
    popolazione: { type: Number },
 });
@@ -84,14 +85,28 @@ rappresenta un certo indirizzo
 
 ```js
 mongoose.Schema({
-   via: { type: String },
-   civico: { type: String },
-   cap: { type: String },
-   regione : { type: String}, // codice regione
-   provincia: { type: String}, // codice provincia
-   comune : { type: String }, // rappresenta un comune/paese,
+   via: String,
+   civico: String,
+   cap: String,
+   regione : String, // codice regione
+   provincia: String, // codice provincia
+   municipalita : String, // rappresenta un comune/paese,
    attributi: [String]
 });
+```
+
+## Indexes
+
+- Tutti i campi ```codice``` sono **unique**
+- ```Indirizzo``` : 
+ ```js
+ index({ JS
+   via: 1,
+   civico: 1,
+   municipalita: 1,
+   regione: 1,
+   provincia: 1,
+}, { unique: true });
 ```
 
 ## Routes
@@ -99,29 +114,33 @@ mongoose.Schema({
 > nuovo express.Router() -> ```getRouter``` 
 > base route : /location
 
-```GET  /:resource```
+- [x] ```GET  /:resource```
     
 parametro ```resource```: 
 - ```yup.string().oneOf(["municipalita", "provincia", "regione"]);```
 
-ritorna la risorsa richiesta
+ritorna le risorse richieste
 
-```GET  /indirizzo/```
+- [x] ```GET  /:resource/:id```
+
+ritorna una determinata risorsa
+
+- [x] ```GET  /indirizzo/```
 
 ritorna tutti gli indirizzi
 
-```GET  /indirizzo/:id```
+- [x] ```GET  /indirizzo/:id```
 
 ritorna un determinato indirizzo
 
-```PUT  /indirizzo/```
+- [x] ```PUT  /indirizzo/```
 
 Aggiunge una nuovo indirizzo
 
-```POST  /indirizzo/:id```
+- [ ] ```POST  /indirizzo/:id```
 
 Aggiorna un indirizzo
 
-```POST  /indirizzo/:id```
+- [x] ```DELETE  /indirizzo/:id```
 
 Elimina un indirizzo

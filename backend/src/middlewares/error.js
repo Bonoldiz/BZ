@@ -1,12 +1,18 @@
 const { response } = require("express");
+const { ValidationError } = require("yup");
 
 /**
  * Error handler middleware
  */
 const errorHandler = function(err, req, res, next){
-   if(!res.statusCode)
+   if(!res.statusCode || res.statusCode < 400)
       res.status(500);
-   res.json({data:[],errors:[err.message]});
+
+   if(err instanceof ValidationError)
+      res.json({data:[],errors:err.errors});
+   else
+      res.json({data:[],errors:[err.message]});
+
 }
 
 

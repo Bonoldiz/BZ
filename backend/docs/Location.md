@@ -6,7 +6,7 @@
     - [Provincia](#provincia)
     - [Municipalita](#municipalita)
     - [Indirizzo](#indirizzo)
-  - [Indexes](#indexes)
+      - [Indexes](#indexes)
   - [Routes](#routes)
 
 > vedi : [comuni-json](https://github.com/matteocontrini/comuni-json)
@@ -90,17 +90,18 @@ mongoose.Schema({
    cap: String,
    regione : String, // codice regione
    provincia: String, // codice provincia
-   municipalita : String, // rappresenta un comune/paese,
-   attributi: [String]
+   municipalita : String, // rappresenta un comune/paese
+   is_deleted: Boolean,
+   attributes: [String]
 });
 ```
 
-## Indexes
+#### Indexes
 
 - Tutti i campi ```codice``` sono **unique**
 - ```Indirizzo``` : 
  ```js
- index({ JS
+ index({
    via: 1,
    civico: 1,
    municipalita: 1,
@@ -111,8 +112,10 @@ mongoose.Schema({
 
 ## Routes
 
-> nuovo express.Router() -> ```getRouter``` 
+> nuovo express.Router() -> ```getRouter```   
 > base route : /location
+
+---
 
 - [x] ```GET  /:resource```
     
@@ -124,6 +127,8 @@ ritorna le risorse richieste
 - [x] ```GET  /:resource/:id```
 
 ritorna una determinata risorsa
+
+---
 
 - [x] ```GET  /indirizzo/```
 

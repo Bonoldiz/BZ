@@ -1,0 +1,46 @@
+{
+   "values": [
+      {
+         "name": "rosso"
+      },
+      {
+         "name": "verde"
+      },
+      {
+         "name": "blu"
+      },
+      {
+         "name": "XL"
+      },
+      {
+         "name": "L"
+      },
+      {
+         "name": "M"
+      },
+      {
+         "name": "S"
+      },
+      {
+         "name": "Taglia"
+      },
+      {
+         "name": "Colore"
+      },
+      {
+         "name": "Tonalità"
+      },
+      {
+         "name": "Vestibilità"
+      },
+      {
+         "name": "Arredamento"
+      },
+      {
+         "name": "Abbigliamento"
+      },
+      {
+         "name": "Categoria"
+      }
+   ]
+}

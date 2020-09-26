@@ -142,7 +142,7 @@ ritorna un determinato indirizzo
 
 Aggiunge una nuovo indirizzo
 
-- [ ] ```POST  /indirizzo/:id```
+- [X] ```POST  /indirizzo/:id```
 
 Aggiorna un indirizzo
 

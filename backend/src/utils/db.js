@@ -9,6 +9,8 @@ mongoose.connect("mongodb://localhost:27017/bazar", {
    useCreateIndex: true
 });
 
+mongoose.set("useFindAndModify",false);
+
 const { initLocation } = require("../routers/location/Location.Model");
 
 // Startup Models init

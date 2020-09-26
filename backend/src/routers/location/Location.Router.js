@@ -1,50 +1,43 @@
 const { getRouter } = require("../router");
 const { Municipalita, Indirizzo, Regione, Provincia } = require("./Location.Model");
-const { resourceValidator, locationQueryValidator, indirizzoValidator } = require("./Location.validator");
+const { resourceValidator, updateIndirizzoValidator, indirizzoValidator } = require("./Location.validator");
 const { errorHandler } = require("../../middlewares/error");
 const mongoose = require("mongoose");
 const LocationRouter = getRouter()
 
+LocationRouter.put("/indirizzo", async (req, res, next) => {
+   var indirizzo;
+   var savedIndirizzo;
+   var assertsIndirizzo;
+   try {
 
-LocationRouter.route("/indirizzo")
-   .get(async (req, res, next) => {
-      const indirizzi = await Indirizzo.find({}).populate("regione").populate("provincia").populate("municipalita").exec();
+      // Validazione degli input
+      indirizzo = await indirizzoValidator.validate(req.body, { abortEarly: false });
 
-      res.json({ data: indirizzi });
-   })
-   .put(async (req, res, next) => {
-      var indirizzo;
-      var savedIndirizzo;
-      var assertsIndirizzo;
-      try {
+      assertsIndirizzo = await Promise.all([
+         Regione.findOne({ codice: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Regione non valida")),
+         Provincia.findOne({ codice: indirizzo.provincia, regione: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Provincia non valida")),
+         Municipalita.findOne({ codice: indirizzo.municipalita, provincia: indirizzo.provincia, regione: indirizzo.regione, cap: indirizzo.cap }).exec().then(docs => docs ? docs : new Error("Municipalità o CAP non trovato")),
+      ])
 
-         // Validazione degli input
-         indirizzo = await indirizzoValidator.validate(req.body, { abortEarly: false });
-
-         assertsIndirizzo = await Promise.all([
-            Regione.findOne({ codice: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Regione non valida")),
-            Provincia.findOne({ codice: indirizzo.provincia, regione: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Provincia non valida")),
-            Municipalita.findOne({ codice: indirizzo.municipalita, provincia: indirizzo.provincia, regione: indirizzo.regione, cap: indirizzo.cap }).exec().then(docs => docs ? docs : new Error("Municipalità o CAP non trovato")),
-         ])
-
-         for (const assertValoriIndirizzo of assertsIndirizzo) {
-            if (assertValoriIndirizzo instanceof Error)
-               return next(assertValoriIndirizzo)
-         }
-
-         // Creazione del record a DB
-         savedIndirizzo = new Indirizzo({
-            ...indirizzo, ...{ regione: assertsIndirizzo[0], provincia: assertsIndirizzo[1], municipalita: assertsIndirizzo[2] }
-         })
-
-         savedIndirizzo = await savedIndirizzo.save();
-
-         res.json({ data: savedIndirizzo });
-      } catch (e) {
-         res.status(422);
-         return next(e);
+      for (const assertValoriIndirizzo of assertsIndirizzo) {
+         if (assertValoriIndirizzo instanceof Error)
+            return next(assertValoriIndirizzo)
       }
-   })
+
+      // Creazione del record a DB
+      savedIndirizzo = new Indirizzo({
+         ...indirizzo, ...{ regione: assertsIndirizzo[0], provincia: assertsIndirizzo[1], municipalita: assertsIndirizzo[2] }
+      })
+
+      savedIndirizzo = await savedIndirizzo.save();
+
+      res.json({ data: savedIndirizzo });
+   } catch (e) {
+      res.status(422);
+      return next(e);
+   }
+})
 
 LocationRouter.delete('/indirizzo/:id', async (req, res, next) => {
    var removedIndirizzo;
@@ -59,6 +52,28 @@ LocationRouter.delete('/indirizzo/:id', async (req, res, next) => {
    }
    res.json({ data: removedIndirizzo });
 })
+
+LocationRouter.post("/indirizzo/:id", async (req, res, next) => {
+   // validazione id
+   let toUpdateIndirizzo = await Indirizzo.find({ _id: req.params.id }).exec();
+   var updateIndirizzo;
+
+   if (!toUpdateIndirizzo) {
+      res.status(404);
+      return next("Not found");
+   }
+
+   try {
+      const validatedInput = await updateIndirizzoValidator.validate(req.body, { abortEarly: false });
+
+      updateIndirizzo = await Indirizzo.findOneAndUpdate({ _id: req.params.id }, validatedInput, { new: true }).exec();
+   } catch (e) {
+      return next(e);
+   }
+
+   res.json({ data: await Indirizzo.find({_id : req.params.id}).populate("regione").populate("provincia").populate("municipalita").exec() })
+})
+
 
 LocationRouter.get('/:resource', async (req, res, next) => {
    var requestedResource, resources;
@@ -100,6 +115,9 @@ LocationRouter.get('/:resource', async (req, res, next) => {
                as: "provincia"
             }
          }]).exec();
+         break
+      case "indirizzo":
+         resources = await Indirizzo.find({}).populate("regione").populate("provincia").populate("municipalita").exec();
          break
    }
 
@@ -147,6 +165,9 @@ LocationRouter.get('/:resource/:id', async (req, res, next) => {
                      as: "provincia"
                   }
                }]).exec();
+            break
+         case "indirizzo":
+            resource = await Indirizzo.find({ _id: mongoose.Types.ObjectId(req.params.id) }).populate("regione").populate("provincia").populate("municipalita").exec();
             break
       }
 

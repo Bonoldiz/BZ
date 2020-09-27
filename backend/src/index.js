@@ -1,3 +1,4 @@
+const listEndpoints = require("express-list-endpoints");
 const express = require("express");
 const helment = require("helmet");
 const cors = require("cors");
@@ -6,6 +7,7 @@ require("./utils/db");
 
 const { errorHandler } = require("./middlewares/error");
 const { LocationRouter } = require("./routers/location/Location.Router");
+const { PersonRouter } = require("./routers/person/Person.Router");
 const { getRouter } = require("./routers/router");
 
 /** 
@@ -23,14 +25,15 @@ const app = express();
 app.use(cors());
 app.use(helment());
 
-app.get('/', (req, res, next) => {
-   console.log("asdas");
-   res.json({ data: { message: "hello" } })
-});
-
 app.use('/location', LocationRouter);
+app.use('/person', PersonRouter);
 
 app.use(errorHandler);
+
+app.get("*",(req,res) => {
+   res.status(404);
+   return res.json({errors: ["404","Route not found :/"],routes: listEndpoints(app)})
+})
 
 app.listen(process.env.EXPRESS_APP_PORT || 9000, () => {
    console.log(`App is listening at ${process.env.EXPRESS_APP_PORT || 9000}.`);

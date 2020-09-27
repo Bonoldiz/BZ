@@ -1,6 +1,6 @@
 const { getRouter } = require("../router");
 const { Municipalita, Indirizzo, Regione, Provincia } = require("./Location.Model");
-const { resourceValidator, updateIndirizzoValidator, indirizzoValidator } = require("./Location.validator");
+const { resourceValidator, updateIndirizzoValidator, indirizzoValidator } = require("./Location.Validator");
 const { errorHandler } = require("../../middlewares/error");
 const mongoose = require("mongoose");
 const LocationRouter = getRouter()
@@ -71,7 +71,7 @@ LocationRouter.post("/indirizzo/:id", async (req, res, next) => {
       return next(e);
    }
 
-   res.json({ data: await Indirizzo.find({_id : req.params.id}).populate("regione").populate("provincia").populate("municipalita").exec() })
+   res.json({ data: await Indirizzo.find({ _id: req.params.id }).populate("regione").populate("provincia").populate("municipalita").exec() })
 })
 
 
@@ -121,7 +121,7 @@ LocationRouter.get('/:resource', async (req, res, next) => {
          break
    }
 
-   res.json(resources);
+   res.json({ data: resources });
 })
 
 LocationRouter.get('/:resource/:id', async (req, res, next) => {
@@ -176,7 +176,7 @@ LocationRouter.get('/:resource/:id', async (req, res, next) => {
          throw new Error("Risorsa non trovata");
       }
 
-      res.json(resource);
+      res.json({ data: resource });
    } catch (e) {
       return next(e);
    }

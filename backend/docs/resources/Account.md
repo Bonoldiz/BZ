@@ -1,31 +1,17 @@
-# People
 
-- [People](#people)
+# Account 
+
+- [Account](#account)
   - [Modelli DB](#modelli-db)
-    - [Person](#person)
-    - [User](#user)
+    - [Account](#account-1)
       - [Indexes](#indexes)
   - [Routes](#routes)
 
 ## Modelli DB 
 
-### Person
-> Rappresenta una persona fisica
-```js
-mongoose.Schema({
-   fname: String,
-   lname: String,
-   bithDay: Date,
-   created_at : Date,
-   residence_id: { type : mongoose.Schema.Types.ObjectId , ref: "Location" },
-   is_deleted: Boolean,
-   attributes: [String]
-});
-```
+### Account
 
-### User
-
-> Rappresenta un account correlato ad una person fisica
+> Rappresenta un account correlato ad una persona fisica
 
 ```js
 mongoose.Schema({
@@ -54,29 +40,7 @@ person_id: 1,
 ## Routes
 
 > nuovo express.Router() -> ```getRouter```   
-> base route : /registry
-
----
-
-- [ ] ```GET  /person```
-
-ritorna tutte le persone
-
-- [ ] ```GET  /person/:id```
-
-ritorna una determinata persona
-
-- [ ] ```PUT  /person```
-
-aggiunge una determinata persona
-
-- [ ] ```POST  /person/:id```
-
-aggiorna una persona
-
-- [ ] ```DELETE  /person/:id```
-
-rimuove una persona
+> base route : /account
 
 ---
 

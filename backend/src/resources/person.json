@@ -1,0 +1,18 @@
+[
+   {
+      "fname":"Will",
+      "lname":"Smith",
+      "birthDay": "2000",
+      "cf": "AAAAAA00A00A000G",
+      "residence_id": "5f6b1d3524e656a22894525b",
+      "attributes": []
+   },
+   {
+      "fname":"Brian",
+      "lname":"Kernighan",
+      "birthDay": "1950",
+      "cf": "AAAAAA00A00A000H",
+      "residence_id": "5f6b1d3524e656a22894525b",
+      "attributes": []
+   }
+]

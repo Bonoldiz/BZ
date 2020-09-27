@@ -15,6 +15,7 @@
       "cors": "^2.8.5",
       "dotenv": "^8.2.0",
       "express": "^4.17.1",
+      "express-list-endpoints": "^5.0.0",
       "helmet": "^4.1.1",
       "jsonwebtoken": "^8.5.1",
       "mongoose": "^5.10.5",
@@ -27,7 +28,9 @@
       "parcel": "^1.12.4",
       "pino-pretty": "^4.2.1"
    },
-   "nodemonConfig":{
-      "ignore":["test/*.js"]
+   "nodemonConfig": {
+      "ignore": [
+         "test/*.js"
+      ]
    }
 }

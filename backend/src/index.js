@@ -8,7 +8,7 @@ require("./utils/db");
 const { errorHandler } = require("./middlewares/error");
 const { LocationRouter } = require("./routers/location/Location.Router");
 const { PersonRouter } = require("./routers/person/Person.Router");
-const { getRouter } = require("./routers/router");
+const { AccountRouter } = require("./routers/account/Account.Router");
 
 /** 
  * LOAD .env FILE
@@ -27,12 +27,13 @@ app.use(helment());
 
 app.use('/location', LocationRouter);
 app.use('/person', PersonRouter);
+app.use('/account', AccountRouter);
 
 app.use(errorHandler);
 
-app.get("*",(req,res) => {
+app.get("*", (req, res) => {
    res.status(404);
-   return res.json({errors: ["404","Route not found :/"],routes: listEndpoints(app)})
+   return res.json({ errors: ["404", "Route not found :/"], routes: listEndpoints(app) })
 })
 
 app.listen(process.env.EXPRESS_APP_PORT || 9000, () => {

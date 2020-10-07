@@ -7,7 +7,7 @@ const PersonValidator = yup.object().shape({
    birthDay: yup.date().required().transform((val,orig) => new Date(val)),
    cf: yup.string().required(),
    created_at:  yup.date().required().default(new Date()),
-   residence_id: yup.string().required(),
+   indirizzo_id: yup.string().required(),
    is_deleted: yup.bool().required().default(false),
    attributes: yup.array().of(yup.string())
 })
@@ -17,7 +17,7 @@ const updatePersonValidator = yup.object().shape({
    lname: yup.string(),
    birthDay: yup.date().transform((val,orig) => new Date(val)),
    cf: yup.string(),
-   residence_id: yup.string(),
+   indirizzo_id: yup.string(),
    is_deleted: yup.bool(),
    attributes: yup.array().of(yup.string())
 })

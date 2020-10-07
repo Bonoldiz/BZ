@@ -27,6 +27,7 @@ const MunicipalitaSK = mongoose.Schema({
    sigla: String,
    codiceCatastale: String,
    cap: [String],
+   search: String,
    popolazione: Number
 });
 
@@ -109,7 +110,8 @@ const initLocation = async () => {
                      popolazione: element.popolazione,
                      regione: element.regione.codice,
                      zona: element.zona.codice,
-                     provincia: element.provincia.codice
+                     provincia: element.provincia.codice,
+                     search: `${element.nome}, ${element.provincia.nome}, ${element.regione.nome}`
                   }]).catch(e => console.log(e));
             });
 

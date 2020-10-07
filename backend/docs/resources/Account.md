@@ -20,7 +20,6 @@ mongoose.Schema({
    password: String,
    created_at: Date,
    is_deleted: Boolean,
-   residence_id: { type : mongoose.Schema.Types.ObjectId , ref: "Location" },
 });
 ```
 

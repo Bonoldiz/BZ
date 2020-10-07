@@ -9,7 +9,7 @@ const PersonSK = mongoose.Schema({
    birthDay: Date,
    cf: String,
    created_at: Date,
-   residence_id: { type: mongoose.Schema.Types.ObjectId, ref: "Indirizzo" },
+   indirizzo_id: { type: mongoose.Schema.Types.ObjectId, ref: "Indirizzo" },
    is_deleted: Boolean,
    attributes: [String]
 })

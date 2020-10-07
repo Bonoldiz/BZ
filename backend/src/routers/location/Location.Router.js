@@ -3,40 +3,59 @@ const { Municipalita, Indirizzo, Regione, Provincia } = require("./Location.Mode
 const { resourceValidator, updateIndirizzoValidator, indirizzoValidator } = require("./Location.Validator");
 const { errorHandler } = require("../../middlewares/error");
 const mongoose = require("mongoose");
-const LocationRouter = getRouter()
+const LocationRouter = getRouter();
 
 LocationRouter.put("/indirizzo", async (req, res, next) => {
    var indirizzo;
    var savedIndirizzo;
-   var assertsIndirizzo;
+   var selectedMunicipalita;
+
    try {
 
       // Validazione degli input
       indirizzo = await indirizzoValidator.validate(req.body, { abortEarly: false });
 
-      assertsIndirizzo = await Promise.all([
-         Regione.findOne({ codice: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Regione non valida")),
-         Provincia.findOne({ codice: indirizzo.provincia, regione: indirizzo.regione }).exec().then(docs => docs ? docs : new Error("Provincia non valida")),
-         Municipalita.findOne({ codice: indirizzo.municipalita, provincia: indirizzo.provincia, regione: indirizzo.regione, cap: indirizzo.cap }).exec().then(docs => docs ? docs : new Error("Municipalità o CAP non trovato")),
-      ])
+      console.log(indirizzo)
 
-      for (const assertValoriIndirizzo of assertsIndirizzo) {
-         if (assertValoriIndirizzo instanceof Error)
-            return next(assertValoriIndirizzo)
-      }
+      selectedMunicipalita = await Municipalita.aggregate([{
+         "$lookup": {
+            from: "regione",
+            localField: "regione",
+            foreignField: "codice",
+            as: "regione"
+         },
+
+      }, {
+         "$lookup": {
+            from: "provincia",
+            localField: "provincia",
+            foreignField: "codice",
+            as: "provincia"
+         }
+      }, {
+         "$match": {
+            _id: mongoose.Types.ObjectId(indirizzo.municipalita)
+         }
+      }]).exec()
+
+      if (!selectedMunicipalita || !selectedMunicipalita.length)
+         return next(new Error("Municiapalità non valida"));
+
+      selectedMunicipalita = selectedMunicipalita[0];
 
       // Creazione del record a DB
       savedIndirizzo = new Indirizzo({
-         ...indirizzo, ...{ regione: assertsIndirizzo[0], provincia: assertsIndirizzo[1], municipalita: assertsIndirizzo[2] }
+         ...indirizzo, ...{ regione: selectedMunicipalita.regione[0]._id, provincia: selectedMunicipalita.provincia[0]._id, municipalita: selectedMunicipalita._id }
       })
 
       savedIndirizzo = await savedIndirizzo.save();
 
-      res.json({ data: savedIndirizzo });
    } catch (e) {
       res.status(422);
       return next(e);
    }
+   
+   res.json({ data: savedIndirizzo });
 })
 
 LocationRouter.delete('/indirizzo/:id', async (req, res, next) => {

@@ -6,8 +6,6 @@ const indirizzoValidator = yup.object().shape({
    via: yup.string().required(),
    civico: yup.string(),
    cap: yup.string().required(),
-   regione: yup.string().required(),
-   provincia: yup.string().required(),
    municipalita: yup.string().required(),
    attributi: yup.array(yup.string())
 })

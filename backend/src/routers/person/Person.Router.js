@@ -37,13 +37,15 @@ PersonRouter.route("/:id")
       res.json({ data: updatedPerson });
 
    }).delete(async (req, res, next) => {
+      var deletedPerson;
       try {
-         await Person.findByIdAndRemove(req.params.id).exec();
+         deletedPerson = await Person.findByIdAndRemove(req.params.id,{new: true}).exec();
       } catch (e) {
          return next(e)
       }
-      res.json({ data: [] })
+      res.json({ data: deletedPerson })
    })
+
 
 
 PersonRouter.use(errorHandler);

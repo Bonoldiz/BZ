@@ -1,0 +1,38 @@
+[
+   {
+      "id" : 0,
+      "region_code": "6",
+      "province_code": "108",
+      "municipality_code": "098057",
+      "street":"test",
+      "steetNo":21,
+      "type":"bazar",
+      "CAP": "37014",
+      "street": "test",
+      "streetNo": "1"
+   },
+   {
+      "id" : 1,
+      "region_code": "6",
+      "province_code": "108",
+      "municipality_code": "098057",
+      "street":"test",
+      "steetNo":21,
+      "type":"bazar",
+      "CAP": "37014",
+      "street": "test",
+      "streetNo": "1"
+   },
+   {
+      "id" : 1,
+      "region_code": "6",
+      "province_code": "108",
+      "municipality_code": "098057",
+      "street":"domicilio",
+      "steetNo":21,
+      "type":"donor",
+      "CAP": "37014",
+      "street": "test",
+      "streetNo": "1"
+   }
+]

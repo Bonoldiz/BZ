@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Bazar Solidale</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+    <!-- Bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- CUSTOM CSS FILES -->
+    <link rel="stylesheet" href="/styles.css">
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#sidebarToggler').on('click', function () {
+                $('#app-sidebar').toggleClass('active');
+                $('.app-content').toggleClass('active');
+                $('.app-toggler').toggleClass('active');
+                $('#sidebarToggler').toggleClass('active');
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- app flew wrapper -->
+    <div id="app-wrapper">
+        <!-- app sidebar -->
+        <nav id="app-sidebar" class=" bg-bz-blue text-white">
+            <a href="/base.html">
+
+                <div id="app-sidebar-header">
+                    <h3>Bazar Solidale </h3>
+                </div>
+            </a>
+
+            <ul class="list-unstyled app-sidebar-items">
+                <li>
+                    <a href="#productsSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Products</a>
+                    <ul class="collapse list-unstyled" id="productsSubmenu">
+                        <li>
+                            <a href="/products/overview.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="/products/manage.html">Manage the Products</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#warehousesSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Bazars</a>
+                    <ul class="collapse list-unstyled" id="warehousesSubmenu">
+                        <li>
+                            <a href="/bazars/overview.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="/bazars/manage.html">Manage the Bazars</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Employes</a>
+                </li>
+
+                <hr>
+                <li>
+                    <a href="/account.html">Account</a>
+                </li>
+                <hr>
+                <li>
+                    <div class="p-2 d-flex" >
+                        <button class="btn btn-warning ml-auto mr-auto align-self-end">
+                            Logout
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- app  -->
+        <div class="app-content">
+            <!-- app sidebar toggler -->
+            <nav class=" app-toggler navbar navbar-expand-lg bg-light m-3">
+                <div class="container-fluid m-2">
+                    <button type="button" id="sidebarToggler" class="btn text-white">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                    <h4 class="nav-item ml-auto mr-4 mb-0 app-toggle-title" href="#">Home<span
+                            class="sr-only">(current)</span></h4>
+                </div>
+
+            </nav>
+
+            <!-- app content -->
+            <div class=" app-content-section container">
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum sed ante vitae viverra. Sed
+                    varius nisi magna, vitae dictum odio sodales et. Sed gravida blandit nisl, vitae tristique nulla
+                    dapibus vel. Donec a nulla in lectus vulputate pretium. Quisque sed pharetra orci, non lacinia mi.
+                    Quisque eget sapien tortor. Proin dignissim felis sed dolor efficitur elementum. Curabitur tempus
+                    enim eget dolor faucibus, vel sodales lectus congue. Nam hendrerit metus scelerisque risus laoreet,
+                    sit amet blandit metus accumsan. Aenean ex libero, ornare imperdiet rutrum id, mattis eget orci.</p>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

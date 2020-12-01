@@ -1,0 +1,15 @@
+{
+   "short_name": "Bazar",
+   "name": "Bazar Manager",
+   "description": "Bazar manager application",
+   "icons": [],
+   "start_url": "/",
+   "background_color": "#a6566242",
+   "display": "standalone",
+   "scope": "/",
+   "theme_color": "#a65662",
+   "serviceworker": {
+      "src": "./sw.js",
+      "scope": "/"
+   }
+}

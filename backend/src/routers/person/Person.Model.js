@@ -18,7 +18,7 @@ PersonSK.index({
    cf: 1
 }, { unique: true })
 
-const Person = mongoose.model("Person", PersonSK);
+const Person = mongoose.model("Person  ", PersonSK);
 
 const initPerson = async () => {
    await Person.deleteMany({}).exec();

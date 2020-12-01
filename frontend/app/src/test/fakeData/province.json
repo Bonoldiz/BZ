@@ -1,0 +1,662 @@
+[
+   {
+     "code" : 0,
+      "acronym": "AQ",
+     "name": "L'Aquila",
+     "region_code": 13
+   },
+   {
+     "code" : 1,
+      "acronym": "CH",
+     "name": "Chieti",
+     "region_code": 13
+   },
+   {
+     "code" : 2,
+      "acronym": "PE",
+     "name": "Pescara",
+     "region_code": 13
+   },
+   {
+     "code" : 3,
+      "acronym": "TE",
+     "name": "Teramo",
+     "region_code": 13
+   },
+   {
+     "code" : 4,
+      "acronym": "MT",
+     "name": "Matera",
+     "region_code": 17
+   },
+   {
+     "code" : 5,
+      "acronym": "PZ",
+     "name": "Potenza",
+     "region_code": 17
+   },
+   {
+     "code" : 6,
+      "acronym": "CZ",
+     "name": "Catanzaro",
+     "region_code": 18
+   },
+   {
+     "code" : 7,
+      "acronym": "CS",
+     "name": "Cosenza",
+     "region_code": 18
+   },
+   {
+     "code" : 8,
+      "acronym": "KR",
+     "name": "Crotone",
+     "region_code": 18
+   },
+   {
+     "code" : 9,
+      "acronym": "RC",
+     "name": "Reggio-Calabria",
+     "region_code": 18
+   },
+   {
+     "code" : 10,
+      "acronym": "VV",
+     "name": "Vibo-Valentia",
+     "region_code": 18
+   },
+   {
+     "code" : 11,
+      "acronym": "AV",
+     "name": "Avellino",
+     "region_code": 15
+   },
+   {
+     "code" : 12,
+      "acronym": "BN",
+     "name": "Benevento",
+     "region_code": 15
+   },
+   {
+     "code" : 13,
+      "acronym": "CE",
+     "name": "Caserta",
+     "region_code": 15
+   },
+   {
+     "code" : 14,
+      "acronym": "NA",
+     "name": "Napoli",
+     "region_code": 15
+   },
+   {
+     "code" : 15,
+      "acronym": "SA",
+     "name": "Salerno",
+     "region_code": 15
+   },
+   {
+     "code" : 16,
+      "acronym": "BO",
+     "name": "Bologna",
+     "region_code": 8
+   },
+   {
+     "code" : 17,
+      "acronym": "FE",
+     "name": "Ferrara",
+     "region_code": 8
+   },
+   {
+     "code" : 18,
+      "acronym": "FC",
+     "name": "Forli-Cesena",
+     "region_code": 8
+   },
+   {
+     "code" : 19,
+      "acronym": "MO",
+     "name": "Modena",
+     "region_code": 8
+   },
+   {
+     "code" : 20,
+      "acronym": "PR",
+     "name": "Parma",
+     "region_code": 8
+   },
+   {
+     "code" : 21,
+      "acronym": "PC",
+     "name": "Piacenza",
+     "region_code": 8
+   },
+   {
+     "code" : 22,
+      "acronym": "RA",
+     "name": "Ravenna",
+     "region_code": 8
+   },
+   {
+     "code" : 23,
+      "acronym": "RE",
+     "name": "Reggio-Emilia",
+     "region_code": 8
+   },
+   {
+     "code" : 24,
+      "acronym": "RN",
+     "name": "Rimini",
+     "region_code": 8
+   },
+   {
+     "code" : 25,
+      "acronym": "GO",
+     "name": "Gorizia",
+     "region_code": 7
+   },
+   {
+     "code" : 26,
+      "acronym": "PN",
+     "name": "Pordenone",
+     "region_code": 7
+   },
+   {
+     "code" : 27,
+      "acronym": "TS",
+     "name": "Trieste",
+     "region_code": 7
+   },
+   {
+     "code" : 28,
+      "acronym": "UD",
+     "name": "Udine",
+     "region_code": 7
+   },
+   {
+     "code" : 29,
+      "acronym": "FR",
+     "name": "Frosinone",
+     "region_code": 12
+   },
+   {
+     "code" : 30,
+      "acronym": "LT",
+     "name": "Latina",
+     "region_code": 12
+   },
+   {
+     "code" : 31,
+      "acronym": "RI",
+     "name": "Rieti",
+     "region_code": 12
+   },
+   {
+     "code" : 32,
+      "acronym": "Roma",
+     "name": "Roma",
+     "region_code": 12
+   },
+   {
+     "code" : 33,
+      "acronym": "VT",
+     "name": "Viterbo",
+     "region_code": 12
+   },
+   {
+     "code" : 34,
+      "acronym": "GE",
+     "name": "Genova",
+     "region_code": 3
+   },
+   {
+     "code" : 35,
+      "acronym": "IM",
+     "name": "Imperia",
+     "region_code": 3
+   },
+   {
+     "code" : 36,
+      "acronym": "SP",
+     "name": "La-Spezia",
+     "region_code": 3
+   },
+   {
+     "code" : 37,
+      "acronym": "SV",
+     "name": "Savona",
+     "region_code": 3
+   },
+   {
+     "code" : 38,
+      "acronym": "BG",
+     "name": "Bergamo",
+     "region_code": 4
+   },
+   {
+     "code" : 39,
+      "acronym": "BS",
+     "name": "Brescia",
+     "region_code": 4
+   },
+   {
+     "code" : 40,
+      "acronym": "CO",
+     "name": "Como",
+     "region_code": 4
+   },
+   {
+     "code" : 41,
+      "acronym": "CR",
+     "name": "Cremona",
+     "region_code": 4
+   },
+   {
+     "code" : 42,
+      "acronym": "LC",
+     "name": "Lecco",
+     "region_code": 4
+   },
+   {
+     "code" : 43,
+      "acronym": "LO",
+     "name": "Lodi",
+     "region_code": 4
+   },
+   {
+     "code" : 44,
+      "acronym": "MN",
+     "name": "Mantova",
+     "region_code": 4
+   },
+   {
+     "code" : 45,
+      "acronym": "MI",
+     "name": "Milano",
+     "region_code": 4
+   },
+   {
+     "code" : 46,
+      "acronym": "MB",
+     "name": "Monza-Brianza",
+     "region_code": 4
+   },
+   {
+     "code" : 47,
+      "acronym": "PV",
+     "name": "Pavia",
+     "region_code": 4
+   },
+   {
+     "code" : 48,
+      "acronym": "SO",
+     "name": "Sondrio",
+     "region_code": 4
+   },
+   {
+     "code" : 49,
+      "acronym": "VA",
+     "name": "Varese",
+     "region_code": 4
+   },
+   {
+     "code" : 50,
+      "acronym": "AN",
+     "name": "Ancona",
+     "region_code": 10
+   },
+   {
+     "code" : 51,
+      "acronym": "AP",
+     "name": "Ascoli-Piceno",
+     "region_code": 10
+   },
+   {
+     "code" : 52,
+      "acronym": "FM",
+     "name": "Fermo",
+     "region_code": 10
+   },
+   {
+     "code" : 53,
+      "acronym": "MC",
+     "name": "Macerata",
+     "region_code": 10
+   },
+   {
+     "code" : 54,
+      "acronym": "PU",
+     "name": "Pesaro-Urbino",
+     "region_code": 10
+   },
+   {
+     "code" : 55,
+      "acronym": "CB",
+     "name": "Campobasso",
+     "region_code": 14
+   },
+   {
+     "code" : 56,
+      "acronym": "IS",
+     "name": "Isernia",
+     "region_code": 14
+   },
+   {
+     "code" : 57,
+      "acronym": "AL",
+     "name": "Alessandria",
+     "region_code": 2
+   },
+   {
+     "code" : 58,
+      "acronym": "AT",
+     "name": "Asti",
+     "region_code": 2
+   },
+   {
+     "code" : 59,
+      "acronym": "BI",
+     "name": "Biella",
+     "region_code": 2
+   },
+   {
+     "code" : 60,
+      "acronym": "CN",
+     "name": "Cuneo",
+     "region_code": 2
+   },
+   {
+     "code" : 61,
+      "acronym": "NO",
+     "name": "Novara",
+     "region_code": 2
+   },
+   {
+     "code" : 62,
+      "acronym": "TO",
+     "name": "Torino",
+     "region_code": 2
+   },
+   {
+     "code" : 63,
+      "acronym": "VB",
+     "name": "Verbania",
+     "region_code": 2
+   },
+   {
+     "code" : 64,
+      "acronym": "VC",
+     "name": "Vercelli",
+     "region_code": 2
+   },
+   {
+     "code" : 65,
+      "acronym": "BA",
+     "name": "Bari",
+     "region_code": 16
+   },
+   {
+     "code" : 66,
+      "acronym": "BT",
+     "name": "Barletta-Andria-Trani",
+     "region_code": 16
+   },
+   {
+     "code" : 67,
+      "acronym": "BR",
+     "name": "Brindisi",
+     "region_code": 16
+   },
+   {
+     "code" : 68,
+      "acronym": "FG",
+     "name": "Foggia",
+     "region_code": 16
+   },
+   {
+     "code" : 69,
+      "acronym": "LE",
+     "name": "Lecce",
+     "region_code": 16
+   },
+   {
+     "code" : 70,
+      "acronym": "TA",
+     "name": "Taranto",
+     "region_code": 16
+   },
+   {
+     "code" : 71,
+      "acronym": "CA",
+     "name": "Cagliari",
+     "region_code": 20
+   },
+   {
+     "code" : 72,
+      "acronym": "CI",
+     "name": "Carbonia Iglesias",
+     "region_code": 20
+   },
+   {
+     "code" : 73,
+      "acronym": "VS",
+     "name": "Medio Campidano",
+     "region_code": 20
+   },
+   {
+     "code" : 74,
+      "acronym": "NU",
+     "name": "Nuoro",
+     "region_code": 20
+   },
+   {
+     "code" : 75,
+      "acronym": "OG",
+     "name": "Ogliastra",
+     "region_code": 20
+   },
+   {
+     "code" : 76,
+      "acronym": "OT",
+     "name": "Olbia Tempio",
+     "region_code": 20
+   },
+   {
+     "code" : 77,
+      "acronym": "OR",
+     "name": "Oristano",
+     "region_code": 20
+   },
+   {
+     "code" : 78,
+      "acronym": "SS",
+     "name": "Sassari",
+     "region_code": 20
+   },
+   {
+     "code" : 79,
+      "acronym": "AG",
+     "name": "Agrigento",
+     "region_code": 19
+   },
+   {
+     "code" : 80,
+      "acronym": "CL",
+     "name": "Caltanissetta",
+     "region_code": 19
+   },
+   {
+     "code" : 81,
+      "acronym": "CT",
+     "name": "Catania",
+     "region_code": 19
+   },
+   {
+     "code" : 82,
+      "acronym": "EN",
+     "name": "Enna",
+     "region_code": 19
+   },
+   {
+     "code" : 83,
+      "acronym": "ME",
+     "name": "Messina",
+     "region_code": 19
+   },
+   {
+     "code" : 84,
+      "acronym": "PA",
+     "name": "Palermo",
+     "region_code": 19
+   },
+   {
+     "code" : 85,
+      "acronym": "RG",
+     "name": "Ragusa",
+     "region_code": 19
+   },
+   {
+     "code" : 86,
+      "acronym": "SR",
+     "name": "Siracusa",
+     "region_code": 19
+   },
+   {
+     "code" : 87,
+      "acronym": "TP",
+     "name": "Trapani",
+     "region_code": 19
+   },
+   {
+     "code" : 88,
+      "acronym": "AR",
+     "name": "Arezzo",
+     "region_code": 9
+   },
+   {
+     "code" : 89,
+      "acronym": "FI",
+     "name": "Firenze",
+     "region_code": 9
+   },
+   {
+     "code" : 90,
+      "acronym": "GR",
+     "name": "Grosseto",
+     "region_code": 9
+   },
+   {
+     "code" : 91,
+      "acronym": "LI",
+     "name": "Livorno",
+     "region_code": 9
+   },
+   {
+     "code" : 92,
+      "acronym": "LU",
+     "name": "Lucca",
+     "region_code": 9
+   },
+   {
+     "code" : 93,
+      "acronym": "MS",
+     "name": "Massa-Carrara",
+     "region_code": 9
+   },
+   {
+     "code" : 94,
+      "acronym": "PI",
+     "name": "Pisa",
+     "region_code": 9
+   },
+   {
+     "code" : 95,
+      "acronym": "PT",
+     "name": "Pistoia",
+     "region_code": 9
+   },
+   {
+     "code" : 96,
+      "acronym": "PO",
+     "name": "Prato",
+     "region_code": 9
+   },
+   {
+     "code" : 97,
+      "acronym": "SI",
+     "name": "Siena",
+     "region_code": 9
+   },
+   {
+     "code" : 98,
+      "acronym": "BZ",
+     "name": "Bolzano",
+     "region_code": 5
+   },
+   {
+     "code" : 99,
+      "acronym": "TN",
+     "name": "Trento",
+     "region_code": 5
+   },
+   {
+     "code" : 100,
+      "acronym": "PG",
+     "name": "Perugia",
+     "region_code": 11
+   },
+   {
+     "code" : 101,
+      "acronym": "TR",
+     "name": "Terni",
+     "region_code": 11
+   },
+   {
+     "code" : 102,
+      "acronym": "AO",
+     "name": "Aosta",
+     "region_code": 1
+   },
+   {
+     "code" : 103,
+      "acronym": "BL",
+     "name": "Belluno",
+     "region_code": 6
+   },
+   {
+     "code" : 104,
+      "acronym": "PD",
+     "name": "Padova",
+     "region_code": 6
+   },
+   {
+     "code" : 105,
+      "acronym": "RO",
+     "name": "Rovigo",
+     "region_code": 6
+   },
+   {
+     "code" : 106,
+      "acronym": "TV",
+     "name": "Treviso",
+     "region_code": 6
+   },
+   {
+     "code" : 107,
+      "acronym": "VE",
+     "name": "Venezia",
+     "region_code": 6
+   },
+   {
+     "code" : 108,
+      "acronym": "VR",
+     "name": "Verona",
+     "region_code": 6
+   },
+   {
+     "code" : 109,
+      "acronym": "VI",
+     "name": "Vicenza",
+     "region_code": 6
+   }
+  ]

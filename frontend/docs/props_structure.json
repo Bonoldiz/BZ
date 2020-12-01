@@ -1,0 +1,136 @@
+{
+   "props":[
+      {
+         "id":0,
+         "name":"_root_"
+      },
+      {
+         "id":1,
+         "name":"mobile"
+      },
+      {
+         "id":2,
+         "name":"arte"
+      },
+      {
+         "id":3,
+         "name":"abbigliamento"
+      },
+      {
+         "id":4,
+         "name":"colore"
+      },
+      {
+         "id":5,
+         "name":"rosso"
+      },
+      {
+         "id":6,
+         "name":"blue"
+      },
+      {
+         "id":7,
+         "name":"taglia"
+      },
+      {
+         "id":8,
+         "name":"L"
+      },
+      {
+         "id":9,
+         "name":"XL"
+      },
+      {
+         "id":10,
+         "name":"tonalita"
+      },
+      {
+         "id":11,
+         "name":"acceso"
+      },
+      {
+         "id":12,
+         "name":"spento"
+      }
+   ],
+   "links":[
+      {
+         "d_prop_id":0,
+         "v_prop_id":1,
+         "save":true
+      },
+      {
+
+         "d_prop_id":0,
+         "v_prop_id":2,
+         "save":true
+      },
+      {
+
+         "d_prop_id":0,
+         "v_prop_id":3,
+         "save":true
+      },
+      {
+
+         "d_prop_id":1,
+         "v_prop_id":4
+      },
+      {
+
+         "d_prop_id":2,
+         "v_prop_id":4
+      },
+      {
+
+         "d_prop_id":4,
+         "v_prop_id":5,
+         "save":true
+      },
+      {
+
+         "d_prop_id":4,
+         "v_prop_id":6,
+         "save":true
+      },
+      {
+
+         "d_prop_id":4,
+         "v_prop_id":10
+      },
+      {
+    
+         "d_prop_id":3,
+         "v_prop_id":4
+      },
+      {
+       
+         "d_prop_id":3,
+         "v_prop_id":7
+      },
+      {
+     
+         "d_prop_id":7,
+         "v_prop_id":8,
+         "save":true
+      },
+      {
+     
+         "d_prop_id":7,
+         "v_prop_id":9,
+         "save":true
+      },
+      {
+  
+         "d_prop_id":10,
+         "v_prop_id":11,
+         "save":true
+      },
+      {
+ 
+         "d_prop_id":10,
+         "v_prop_id":12,
+         "save":true
+      }
+   ]
+}

@@ -1,0 +1,14 @@
+[
+   '{{repeat(50, 0)}}',
+   {
+     id: '{{index()}}',
+     name: '{{firstName()}}',
+     surname: '{{surname()}}',
+     gender: '{{gender()}}',
+     email: '{{email()}}',
+     phone: '+38 {{phone()}}',
+     address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+     about: '{{lorem(1, "paragraphs")}}',
+     birthday: '{{date(new Date(1980, 0, 1), new Date(), "YYYY-MM-dd")}}'
+   }
+ ]
